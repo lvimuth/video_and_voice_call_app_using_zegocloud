@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "819092350164",
+    "project_id": "flutter-video-call-app-7f631",
+    "storage_bucket": "flutter-video-call-app-7f631.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819092350164:android:9fa137818e077eaa3b4741",
+        "android_client_info": {
+          "package_name": "com.example.video_and_voice_call_app_using_zegocloud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc_8tczYzdOB4fbNdwHtCzhW9LR0m6iIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

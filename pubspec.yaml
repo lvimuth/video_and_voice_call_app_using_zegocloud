@@ -1,5 +1,5 @@
 name: video_and_voice_call_app_using_zegocloud
-description: "A new Flutter project."
+description: "A new version of Video Call and Voice Call that supports Group and one to one ."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
@@ -44,7 +44,14 @@ dependencies:
   zego_uikit_signaling_plugin: ^2.8.4
   zego_uikit_prebuilt_call: ^4.16.2
 
+  share: ^2.0.4
+  share_plus: ^10.0.2
+
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+
 dev_dependencies:
+  flutter_launcher_icons: ^0.14.1
   flutter_test:
     sdk: flutter
 
@@ -59,6 +66,12 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/image.png"
+
 flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

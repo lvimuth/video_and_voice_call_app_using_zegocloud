@@ -5,10 +5,13 @@ import 'package:video_and_voice_call_app_using_zegocloud/service/login_service.d
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 import 'constant/constants.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   final prefs = await SharedPreferences.getInstance();
   final cacheUserID = prefs.get(cacheUserIDKey) as String? ?? '';
   if (cacheUserID.isNotEmpty) {

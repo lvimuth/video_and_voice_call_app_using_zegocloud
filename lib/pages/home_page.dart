@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:video_and_voice_call_app_using_zegocloud/constant/constants.dart';
 import 'package:video_and_voice_call_app_using_zegocloud/service/login_service.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
@@ -40,13 +41,49 @@ class HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  "Welcome, To Video Call Flutter application plase enter the user id and group id to make a call",
+                  "Welcome, To Video Call Flutter application please enter the user id and group id to make a call",
                 ),
                 const SizedBox(height: 10),
-                Text(
-                  'Your User Id: ${currentUser.id}',
-                  style: const TextStyle(fontSize: 16),
+
+                // Updated Share your ID section
+                Row(
+                  children: [
+                    Text(
+                      'Share your ID: ${currentUser.id}',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    Spacer(), // This pushes the icons to the end of the Row
+                    IconButton(
+                      icon: const Icon(Icons.copy),
+                      padding:
+                          EdgeInsets.zero, // Remove padding to minimize spacing
+                      constraints:
+                          const BoxConstraints(), // Remove constraints to make icons closer
+                      onPressed: () {
+                        Clipboard.setData(ClipboardData(text: currentUser.id));
+                        showToast(
+                          'User ID copied to clipboard!',
+                          position: StyledToastPosition.top,
+                          context: context,
+                        );
+                      },
+                    ),
+                    const SizedBox(
+                        width: 4), // Minimal spacing between the two icons
+                    IconButton(
+                      icon: const Icon(Icons.share),
+                      padding:
+                          EdgeInsets.zero, // Remove padding to minimize spacing
+                      constraints:
+                          const BoxConstraints(), // Remove constraints to make icons closer
+                      onPressed: () {
+                        Share.share('My Video Call ID: ${currentUser.id}',
+                            subject: 'Share your ID');
+                      },
+                    ),
+                  ],
                 ),
+
                 const SizedBox(height: 30),
                 inviteeInputRow(
                   title: 'Invitee name',
